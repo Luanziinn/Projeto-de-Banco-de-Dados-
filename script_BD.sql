@@ -1,8 +1,8 @@
 -- -----------------------------------------------------
 -- Banco de Dados Plataforma de vendas de jogos online
 -- -----------------------------------------------------
--- CREATE DATABASE Plataforma_de_vendas_de_jogos_online;
---- USE Plataforma_de_vendas_de_jogos_online;
+ CREATE DATABASE Plataforma_de_vendas_de_jogos_online;
+ USE Plataforma_de_vendas_de_jogos_online;
 
 
 -- -----------------------------------------------------
@@ -234,20 +234,23 @@ CREATE TABLE Usuário_has_Suporte (
 );
 
 
+-- ----------------------------------------------------
+-- Tabela Requisitos_Sistema
+-- ----------------------------------------------------
 CREATE TABLE Requisitos_Sistema (
 
-	Chave INT NOT NULL PRIMARY KEY,
-    Processador varchar(45),
-    Memoria_RAM VARCHAR(45),
-    PLACA_DE_VIDEO varchar(45),
-    ID_JOGO int not null,
-    ID_PLATAFORMA int not null,
+  Chave INT NOT NULL PRIMARY KEY,
+  Processador varchar(45),
+  Memoria_RAM VARCHAR(45),
+  PLACA_DE_VIDEO varchar(45),
+  ID_JOGO int not null,
+  ID_PLATAFORMA int not null,
     
-    FOREIGN KEY(ID_JOGO)
-    references JOGO(idJogo),
+  FOREIGN KEY(ID_JOGO)
+  references JOGO(idJogo),
     
-    Foreign key(ID_PLATAFORMA)
-    REFERENCES PLATAFORMA(IP)
+  Foreign key(ID_PLATAFORMA)
+  REFERENCES PLATAFORMA(IP)
 );    
 
 -- -----------------------------------------------------
