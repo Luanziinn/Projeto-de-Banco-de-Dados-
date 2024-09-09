@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./imagens/t-logo.png">
   <title>CRUD Usuário - Plataforma de Jogos</title>
   <style>
     * {
@@ -128,15 +129,28 @@
       font-weight: bold;
       text-align: center;
     }
+
+    .h2-titulos{
+      padding: 10px;
+    }
+
+    #metodo_de_pagamento{
+      margin: 0 15px 0 0;
+    }
+
+    .h2-subtitulo{
+      color: #dbbf09;
+    }
+
   </style>
 </head>
 <body>
 
   <div class="container">
-    <h1>Cadastro de Usuário the Best Games</h1>
+    <h1>The Best Games</h1>
+    <h2 class="h2-subtitulo">Cadastro de Usuário</h2>
 
     <!-- Formulário para Adicionar Usuário -->
-    <h2>Insira seus dados abaixo *</h2>
     <form id="addUserForm">
       <label for="idUsuario">ID do Usuário:</label>
       <input type="number" id="idUsuario" name="idUsuario" placeholder="Digite o ID do usuário" required>
@@ -157,27 +171,27 @@
     </form>
 
     <!-- Exibir Usuários -->
-    <h2>Lista de Usuários</h2>
+    <h2 class=h2-titulos>Lista de Usuários</h2>
     <button class="btn-primary" onclick="getUsuarios()">Buscar Usuários</button>
     <div class="result" id="usuariosList"></div>
 
     <!-- Seção de Jogos Disponíveis -->
     <div id="jogosDisponiveis">
-      <h2>Jogos Disponíveis</h2>
+      <h2 class="h2-titulos">Jogos Disponíveis</h2>
       <div class="checkbox">
-        <label><input type="checkbox" value="Bomba patch" data-preco="1000"> Bomba patch R$1.000,00</label>
+        <label><input type="checkbox" value="Bomba Patch" data-preco="1000"> Bomba Patch R$1.000,00</label>
       </div>
       <div class="checkbox">
-        <label><input type="checkbox" value="Call of Duty" data-preco="390"> Call of Duty R$390,00</label>
+        <label><input type="checkbox" value="Call of Duty" data-preco="339"> Call of Duty R$339,00</label>
       </div>
       <div class="checkbox">
-        <label><input type="checkbox" value="The Witcher 3" data-preco="400"> The Witcher 3 R$400,00</label>
+        <label><input type="checkbox" value="The Witcher 3" data-preco="129"> The Witcher 3 R$129,00</label>
       </div>
       <div class="checkbox">
-        <label><input type="checkbox" value="Minecraft" data-preco="300"> Minecraft R$300,00</label>
+        <label><input type="checkbox" value="Minecraft" data-preco="120"> Minecraft R$120,00</label>
       </div>
       <div class="checkbox">
-        <label><input type="checkbox" value="Life is Strange" data-preco="100"> Life is Strange R$100,00</label>
+        <label><input type="checkbox" value="Life is Strange" data-preco="199"> Life is Strange R$199,00</label>
       </div>
       <button class="btn-primary" onclick="adicionarJogo()">Adicionar ao Carrinho</button>
       <div class="selected-games" id="jogosEscolhidos"></div>
@@ -185,7 +199,7 @@
 
       <!-- Seção de método de pagamento -->
       <div class="payment-method">
-        <label for="payment">Escolha o método de pagamento:</label>
+        <label for="payment" id="metodo_de_pagamento">Escolha o método de pagamento:</label>
         <select id="payment">
           <option value="PIX">PIX</option>
           <option value="Cartão de crédito">Cartão de crédito</option>
@@ -244,8 +258,7 @@
                                      <strong>Jogos Adquiridos:</strong> ${usuario.jogos.join(', ')}
                                      <br>
                                      <button onclick="entrarUsuario(${index})">Entrar</button>
-                                     <button onclick="editarUsuario(${index})">Editar cadastro</button>
-                                     <button onclick="atualizarjogos(${index})">Atualizar jogos</button>                                    
+                                     <button onclick="editarUsuario(${index})">Editar cadastro</button>                                   
                                      <button onclick="excluirUsuario(${index})">Excluir</button>
                                      </p>`;
         });
