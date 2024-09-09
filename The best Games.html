@@ -274,12 +274,19 @@
       document.getElementById('dataNascimento').value = usuario.dataNascimento;
       document.getElementById('telefone').value = usuario.telefone;
       
-      
+  
       // Remover o usuário da lista para evitar duplicação
       usuarios.splice(index, 1);
       getUsuarios(); // Atualiza a lista de usuários
+
+      // Após editar compra, ocultar a seção de compra 
+      document.getElementById('jogosDisponiveis').style.display = 'none'; 
+      document.getElementById('jogosEscolhidos').innerHTML = ''; // Limpar a lista de jogos exibidos
+      document.getElementById('totalPrice').innerHTML = ''; // Limpar o total exibido       
     }
-  
+
+     
+      
     // Função para excluir usuário
     function excluirUsuario(index) {
       if (confirm("Tem certeza que deseja excluir este usuário?")) {
@@ -358,8 +365,6 @@
       }
     });
   </script>
-  
-  
 
 </body>
 </html>
